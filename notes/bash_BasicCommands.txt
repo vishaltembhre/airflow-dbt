@@ -1,0 +1,130 @@
+# Basic Navigation
+pwd         # Print working directory
+ls          # List directory contents
+cd [dir]    # Change directory to [dir]
+
+# File Operations
+touch [file]    # Create a new file
+cp [src] [dest] # Copy file from [src] to [dest]
+mv [src] [dest] # Move/rename file from [src] to [dest]
+rm [file]       # Remove file
+mkdir [dir]     # Create a new directory
+rmdir [dir]     # Remove an empty directory
+rm -r [dir]     # Remove a directory and its contents recursively
+
+# Viewing and Editing Files
+cat [file]      # View file contents
+less [file]     # View file contents page by page
+head [file]     # View the first 10 lines of a file
+tail [file]     # View the last 10 lines of a file
+nano [file]     # Edit file with nano editor
+vim [file]      # Edit file with vim editor
+
+# System Information
+uname -a        # Display all system information
+top             # Display running processes
+df -h           # Display disk space usage
+free -h         # Display memory usage
+
+# Networking
+ifconfig        # Display network configuration
+ping [host]     # Ping a host
+netstat -tuln   # Display listening ports
+
+# Permissions
+chmod [mode] [file]  # Change file permissions
+chown [user]:[group] [file]  # Change file owner and group
+
+# Searching
+find [dir] -name [name]  # Find files by name
+grep [pattern] [file]    # Search for a pattern in a file
+
+# Compression
+tar -czvf [archive.tar.gz] [dir]  # Create a tarball archive
+tar -xzvf [archive.tar.gz]        # Extract a tarball archive
+zip [archive.zip] [file]          # Create a zip archive
+unzip [archive.zip]               # Extract a zip archive
+
+# Package Management (Debian-based)
+sudo apt update            # Update package list
+sudo apt upgrade           # Upgrade installed packages
+sudo apt install [package] # Install a package
+sudo apt remove [package]  # Remove a package
+
+# Package Management (Red Hat-based)
+sudo yum update            # Update package list
+sudo yum install [package] # Install a package
+sudo yum remove [package]  # Remove a package
+
+# GNOME Terminal Commands
+gnome-terminal                # Open a new GNOME Terminal window
+gnome-terminal --tab          # Open a new tab in the current GNOME Terminal window
+gnome-terminal -- bash -c "[command]; exec bash"  # Run a command in a new GNOME Terminal window and keep it open
+gnome-terminal --geometry=80x24+10+10  # Open GNOME Terminal with specified geometry (width x height + x-offset + y-offset)
+gnome-terminal --window-with-profile=[profile]  # Open GNOME Terminal with a specified profile
+
+# GNOME Commands
+gnome-screenshot -a          # Take a screenshot of an area
+gnome-screenshot -w          # Take a screenshot of the current window
+gnome-screenshot -d [seconds] # Take a screenshot after a delay
+gnome-calculator             # Open GNOME Calculator
+gnome-system-monitor         # Open GNOME System Monitor
+gnome-disks                  # Open GNOME Disks utility
+gnome-control-center         # Open GNOME Settings
+
+# DevOps and System Administration
+
+# User Management
+sudo adduser [username]          # Add a new user
+sudo userdel [username]          # Delete a user
+sudo usermod -aG [group] [user]  # Add a user to a group
+
+# Service Management (Systemd)
+sudo systemctl start [service]   # Start a service
+sudo systemctl stop [service]    # Stop a service
+sudo systemctl restart [service] # Restart a service
+sudo systemctl status [service]  # Check the status of a service
+sudo systemctl enable [service]  # Enable a service to start on boot
+sudo systemctl disable [service] # Disable a service from starting on boot
+
+# Cron Jobs
+crontab -e                       # Edit the current user's cron jobs
+crontab -l                       # List the current user's cron jobs
+sudo crontab -e                  # Edit the root user's cron jobs
+sudo crontab -l                  # List the root user's cron jobs
+
+# Disk Management
+sudo fdisk -l                    # List all disk partitions
+sudo mount [device] [dir]        # Mount a device to a directory
+sudo umount [device]             # Unmount a device
+df -h                            # Display disk space usage
+du -sh [dir]                     # Display the size of a directory
+
+# Network Management
+sudo ip link set [interface] up  # Bring a network interface up
+sudo ip link set [interface] down # Bring a network interface down
+sudo ip addr add [ip]/[cidr] dev [interface] # Assign an IP address to an interface
+sudo ip addr del [ip]/[cidr] dev [interface] # Remove an IP address from an interface
+
+# SSH
+ssh [user]@[host]                # Connect to a remote host via SSH
+scp [file] [user]@[host]:[path]  # Copy a file to a remote host via SCP
+ssh-keygen                       # Generate an SSH key pair
+ssh-copy-id [user]@[host]        # Copy SSH key to a remote host
+
+# Docker
+docker ps                        # List running Docker containers
+docker images                    # List Docker images
+docker run [image]               # Run a Docker container
+docker stop [container]          # Stop a running Docker container
+docker rm [container]            # Remove a Docker container
+docker rmi [image]               # Remove a Docker image
+
+# Kubernetes
+kubectl get pods                 # List all pods in the current namespace
+kubectl get services             # List all services in the current namespace
+kubectl apply -f [file]          # Apply a configuration file
+kubectl delete -f [file]         # Delete resources defined in a configuration file
+kubectl logs [pod]               # View logs for a pod
+kubectl exec -it [pod] -- [command] # Execute a command in a pod
+

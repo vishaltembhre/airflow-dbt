@@ -1,0 +1,63 @@
+--Airflow WSL installation 
+
+sudo apt-get install software-properties-common
+
+sudo apt-add-repository universe
+
+sudo apt-get update
+
+sudo apt-get install python3-pip3
+
+export SLUGIFY_USES_TEXT_UNIDECODE=yes
+
+pip3 install apache-airflow 
+
+airflow initdb
+
+
+--Virtual Environment (WSL Ubuntu)
+source .venv/bin/activate
+
+AIRFLOW
+--Initiate Airflow
+airflow db init
+
+--Create User if not already
+airflow users create \
+    --username admin \
+    --firstname FIRST_NAME \
+    --lastname LAST_NAME \
+    --role Admin \
+    --email admin@example.com
+
+--Start Airflow webserver
+airflow webserver --port 8080
+
+--Start Airflow Scheduler (different terminal using virtual Environment)
+airflow scheduler
+
+--Airflow hosted server
+http://localhost:8080
+
+--linux command
+touch abc.py --(to create file)
+mkdir abc --(too create folder)
+
+--Jenkins server
+http://localhost:8081
+
+--Ubantu address (if i will create any project )
+\\wsl.localhost\Ubuntu\home\vishal
+
+--project path airflow.cfg location
+\\wsl.localhost\Ubuntu\home\vishal\airflow\airflow.cfg
+
+--terminal output for above location
+Microsoft.PowerShell.Core\FileSystem::\\wsl.localhost\Ubuntu\home\vishal\airflow
+
+--command to get airflow location
+echo ~/airflow
+
+--github project setup Commands
+echo "# airflow-dbt" >> README.md
+

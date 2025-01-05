@@ -1,0 +1,34 @@
+source airflowVenv/bin/activate
+
+--set variable in new terminal else overriding it onto same terminal will not usually work
+export AIRFLOW_HOME=~/Projects/airflow+DBT
+
+ls -ld ~/Projects/airflow+DBT
+
+echo $AIRFLOW_HOME
+
+airflow db init 
+
+airflow webserver --port 8080
+
+--new terminal (may be scheduler localhost -  http://localhost:8793/ not sure)
+airflow scheduler 
+
+--to kill airflow instance 
+pkill -f "airflow webserver"
+pkill -f "airflow scheduler"
+
+--list dags
+airflow dags list
+
+--reset airflow
+airflow db reset
+
+--to get dags from dags folder we have to update the cfg file anf then re initiate the airflow db
+
+airflow users list
+
+--everytime i've to set up AIRFLOW_HOME before executing airflow webserver and scheduler in both terminal
+
+--write bash script to initialise everything for airflow
+
