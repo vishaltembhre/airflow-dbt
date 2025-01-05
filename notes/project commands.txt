@@ -60,4 +60,12 @@ echo ~/airflow
 
 --github project setup Commands
 echo "# airflow-dbt" >> README.md
+git add .
+git reset #if any issue with git add .
+git status
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/vishaltembhre/airflow-dbt.git
+git push -u origin main
+
 
