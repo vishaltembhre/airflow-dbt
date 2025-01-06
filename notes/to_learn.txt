@@ -1,0 +1,4 @@
+basics of API development (fast api)
+Airflow and REST API
+manipulating JSON file or simplying JSON file for better readability or converting it into other ingestable format(CSV)
+CSV to ovro or parquet conversion and Operations

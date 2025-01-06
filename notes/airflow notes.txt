@@ -1,0 +1,22 @@
+Operator - pythonoperator,bashOperator
+sensor - wait to task to get complete before executing (wait for task or condition to met)
+trigger - same as sensor but better and asynchronous(event driven)
+
+XCOM - to inject data during DAG execution in form of key value pair
+# Push data to XCom
+kwargs['ti'].xcom_push(key='my_key', value='Hello, Airflow!')
+# Pull data from XCom
+value = kwargs['ti'].xcom_pull(key='my_key', task_ids='push_task')
+
+Branching (BranchPythonOperator) - Only the tasks returned by the branch operator are executed; others are skipped
+branch >> [task_1, task_2] >> final_task
+
+SubDag (SubDagOperator), same as DAG
+
+Hooks - to interact with external system (postgres & redshift)(database , cloud, api & custom hooks)
+pg_hook = PostgresHook(postgres_conn_id='my_postgres_conn')
+conn = pg_hook.get_conn()
+
+Pools - Mechanism to control task concurrency and manage resources.
+task_1 = DummyOperator(task_id='task_1', pool='my_pool')
+task_2 = DummyOperator(task_id='task_2', pool='my_pool')
